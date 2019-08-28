@@ -13,7 +13,7 @@ class Timer {
     this.timerRunning = TIMERSTATE.STOPPED;
     this.timerLoop = undefined;
     this.startTime = 0;
-    this.elapsedTime = (23 * 1000 * 60 * 60) + (55 * 1000 * 60);
+    this.elapsedTime = 0;
     this.clients = [];
     this.updateCallback = updateCallback;
     this.id = id;
@@ -46,7 +46,7 @@ class Timer {
     let now = Date.now();
     let timeDiff = now - this.startTime + this.elapsedTime; // in milliseconds
 
-    let timeDiffInSeconds = timeDiff / 20.833;
+    let timeDiffInSeconds = timeDiff / 1;
     this.hours = Math.floor(timeDiffInSeconds / 3600);
     this.minutes = Math.floor(timeDiffInSeconds / 60) % 60;
     this.seconds = Math.floor(timeDiffInSeconds % 60);
