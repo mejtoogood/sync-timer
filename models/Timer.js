@@ -6,7 +6,6 @@ const timerTickInterval = 200;
 
 class Timer {
   constructor(updateCallback, id) {
-    this.days = 0;
     this.hours = 0;
     this.minutes = 0;
     this.seconds = 0;
@@ -57,7 +56,6 @@ class Timer {
   }
 
   resetTimer() {
-    this.days = 0;
     this.hours = 0;
     this.minutes = 0;
     this.seconds = 0;
@@ -93,7 +91,6 @@ class Timer {
 
   get time() {
     return {
-      days: padDisplay(this.days, 2),
       hours: padDisplay(this.hours, 2),
       minutes: padDisplay(this.minutes, 2),
       seconds: padDisplay(this.seconds, 2)
