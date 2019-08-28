@@ -128,14 +128,10 @@ var getDisplayElements = function() {
   hoursOnesFront = document.getElementById('hours-ones').getElementsByClassName('front')[0];
   minutesTensFront = document.getElementById('minutes-tens').getElementsByClassName('front')[0];
   minutesOnesFront = document.getElementById('minutes-ones').getElementsByClassName('front')[0];
-  secondsTensFront = document.getElementById('seconds-tens').getElementsByClassName('front')[0];
-  secondsOnesFront = document.getElementById('seconds-ones').getElementsByClassName('front')[0];
   hoursTensBack = document.getElementById('hours-tens').getElementsByClassName('back')[0];
   hoursOnesBack = document.getElementById('hours-ones').getElementsByClassName('back')[0];
   minutesTensBack = document.getElementById('minutes-tens').getElementsByClassName('back')[0];
   minutesOnesBack = document.getElementById('minutes-ones').getElementsByClassName('back')[0];
-  secondsTensBack = document.getElementById('seconds-tens').getElementsByClassName('back')[0];
-  secondsOnesBack = document.getElementById('seconds-ones').getElementsByClassName('back')[0];
 
   statusEl = document.getElementById('running-state');
 
