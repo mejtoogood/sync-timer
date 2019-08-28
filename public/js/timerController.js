@@ -4,6 +4,10 @@ var dowdisplay;
 var timerdisplay;
 var statusEl;
 
+var curDay;
+var curHour;
+var curMinute;
+
 var displayReady = false;
 
 var startTimer = function() {
@@ -27,12 +31,11 @@ var weekday = new Array(7);
   weekday[5] = "Friday";
   weekday[6] = "Saturday";
 
-var updateDisplay = function(days, hours, minutes, seconds) {
+var updateDisplay = function(days, hours, minutes) {
   if (displayReady) {
-    var curDay = weekday[days];
-    var curHour = hours;
-    var curMinute = minutes;
-    var curSeconds = seconds;
+    curDay = weekday[days];
+    curHour = hours;
+    curMinute = minutes;
 
     dowdisplay.innerHTML = curDay;
     timerdisplay.innerHTML = curHour + ":" + curMinute;

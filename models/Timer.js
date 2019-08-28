@@ -9,11 +9,10 @@ class Timer {
     this.days = 0;
     this.hours = 0;
     this.minutes = 0;
-    this.seconds = 0;
     this.timerRunning = TIMERSTATE.STOPPED;
     this.timerLoop = undefined;
     this.startTime = 0;
-    this.elapsedTime = 15000;
+    this.elapsedTime = 0;
     this.clients = [];
     this.updateCallback = updateCallback;
     this.id = id;
@@ -47,10 +46,9 @@ class Timer {
     let timeDiff = now - this.startTime + this.elapsedTime; // in milliseconds
 
     let timeDiffInSeconds = timeDiff / 1000;
-    this.days = Math.floor(timeDiffInSeconds / 86400) % 6;
-    this.hours = Math.floor(timeDiffInSeconds / 3600) % 24;
-    this.minutes = Math.floor(timeDiffInSeconds / 60) % 60;
-    this.seconds = Math.floor(timeDiffInSeconds);
+    this.days = Math.floor(timeDiffInSeconds / 86400);
+    this.hours = Math.floor(timeDiffInSeconds / 3600);
+    this.minutes = Math.floor(timeDiffInSeconds / 60);
 
     if (this.updateCallback) {
       this.updateCallback(this);
@@ -61,7 +59,6 @@ class Timer {
     this.days = 0;
     this.hours = 0;
     this.minutes = 0;
-    this.seconds = 0;
     this.elapsedTime = 0;
     this.timerRunning = TIMERSTATE.STOPPED;
 
@@ -94,10 +91,9 @@ class Timer {
 
   get time() {
     return {
-      days: this.days,
+      days: this.days % 6,
       hours: padDisplay(this.hours % 24, 2),
-      minutes: padDisplay(this.minutes % 60, 2),
-      seconds: padDisplay(this.seconds % 60, 2)
+      minutes: padDisplay(this.minutes % 60, 2)
     }
   }
 };

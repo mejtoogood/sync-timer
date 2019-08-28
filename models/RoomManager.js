@@ -4,7 +4,7 @@ const { logExceptInTest } = require('../helpers');
 const Timer = require('./Timer');
 const uniqid = require('uniqid');
 
-const timerGCDelay = 5 * 60 * 1000; // 5 minutes 
+const timerGCDelay = 15 * 60 * 1000; // 15 minutes
 
 class RoomManager {
   constructor() {
@@ -94,7 +94,7 @@ class RoomManager {
         return true;
       } else {
         logExceptInTest(`addClientToTimer: User ${clientId} already added to Timer ${timerId}`);
-        return true;        
+        return true;
       }
     }
   };
@@ -122,11 +122,11 @@ class RoomManager {
           }, timerGCDelay);
           logExceptInTest(`Mark unused Timer ${timerId} for deletion`);
         }
-        
+
         return true;
       } else {
         logExceptInTest(`removeClientFromTimer: User ${clientId} not in Timer ${timerId}`);
-        return false;        
+        return false;
       }
     }
   };
