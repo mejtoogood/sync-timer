@@ -1,5 +1,6 @@
 'use strict';
 
+var dowdisplay;
 var hoursTensFront;
 var hoursOnesFront;
 var minutesTensFront;
@@ -111,6 +112,7 @@ var updateDisplay = function(day, hours, minutes, seconds) {
 };
 
 var getDisplayElements = function() {
+  dowdisplay = document.getElementById('dowdisplay');
   hoursTensFront = document.getElementById('hours-tens').getElementsByClassName('front')[0];
   hoursOnesFront = document.getElementById('hours-ones').getElementsByClassName('front')[0];
   minutesTensFront = document.getElementById('minutes-tens').getElementsByClassName('front')[0];
