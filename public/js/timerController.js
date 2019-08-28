@@ -51,7 +51,7 @@ function DoW(days) {
 var updateDisplay = function(days, hours, minutes, seconds) {
   if (displayReady) {
     dowdisplay.innerText = DoW(days);
-    curDay = dowdisplay;
+    curDay = days;
     if (curHour !== hours) {
       if (curHour.charAt(0) !== hours.charAt(0)) {
         hoursTensBack.innerText = curHour.charAt(0);
