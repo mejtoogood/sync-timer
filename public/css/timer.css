@@ -3,7 +3,7 @@ body {
   background-size: cover;
   background-position: left bottom;
   color: white;
-  font-family: "Cinzel", "serif"; }
+  font-family: 'Play', sans-serif; }
 
 button {
   color: white;
@@ -83,7 +83,7 @@ button {
   width: 100%;
   font-size: 20vw;
   font-weight: 400;
-  font-family: "Cinzel Decorative", "cursive"; }
+  font-family: 'Play', sans-serif; }
 
 .digit {
   width: 13vw; }
