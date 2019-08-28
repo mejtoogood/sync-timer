@@ -33,7 +33,7 @@ var resetTimer = function() {
   sendResetSignal();
 }
 
-var updateDisplay = function(day, hours, minutes, seconds) {
+var updateDisplay = function(hours, minutes, seconds) {
   if (displayReady) {
     if (curHour !== hours) {
       if (curHour.charAt(0) !== hours.charAt(0)) {
