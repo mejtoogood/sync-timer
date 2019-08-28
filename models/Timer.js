@@ -46,7 +46,7 @@ class Timer {
     let now = Date.now();
     let timeDiff = now - this.startTime + this.elapsedTime; // in milliseconds
 
-    let timeDiffInSeconds = timeDiff / 100;
+    let timeDiffInSeconds = timeDiff / 20.833;
     this.hours = Math.floor(timeDiffInSeconds / 3600);
     this.minutes = Math.floor(timeDiffInSeconds / 60) % 60;
     this.seconds = Math.floor(timeDiffInSeconds % 60);
