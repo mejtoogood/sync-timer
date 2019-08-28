@@ -35,7 +35,7 @@ var resetTimer = function() {
   sendResetSignal();
 }
 
-function DoW(day) {
+function DoW(days) {
   var weekday = new Array(7);
   weekday[0] = "Sunday";
   weekday[1] = "Monday";
@@ -45,12 +45,13 @@ function DoW(day) {
   weekday[5] = "Friday";
   weekday[6] = "Saturday";
 
-  return weekday[day];
+  return weekday[days];
 }
 
-var updateDisplay = function(day, hours, minutes, seconds) {
+var updateDisplay = function(days, hours, minutes, seconds) {
   if (displayReady) {
-    dowdisplay.innerText = DoW(day);
+    dowdisplay.innerText = DoW(days);
+    curDay = dowdisplay;
     if (curHour !== hours) {
       if (curHour.charAt(0) !== hours.charAt(0)) {
         hoursTensBack.innerText = curHour.charAt(0);
