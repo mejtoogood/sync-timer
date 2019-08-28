@@ -39,7 +39,7 @@ var updateDisplay = function(days, hours, minutes) {
     curMinute = minutes;
 
     dowdisplay.innerHTML = curDay;
-    timerdisplay.innerHTML = curHour + ":" + curMinute;
+    timerdisplay.innerHTML = String(curHour) + ":" + String(curMinute);
   }
 };
 
