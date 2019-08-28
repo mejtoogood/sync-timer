@@ -35,13 +35,8 @@ var weekday = new Array(7);
 
 var updateDisplay = function(days, hours, minutes, seconds) {
   if (displayReady) {
-    curDay = weekday[days];
-    curHour = hours;
-    curMinute = minutes;
-    curSeconds = seconds;
-
-    dowdisplay.innerHTML = curDay;
-    timerdisplay.innerHTML = String(curHour) + ":" + String(curMinute);
+    dowdisplay.innerHTML = weekday[days];
+    timerdisplay.innerHTML = String(hours) + ":" + String(minutes);
   }
 };
 
