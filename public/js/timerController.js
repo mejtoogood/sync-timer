@@ -27,16 +27,16 @@ var weekday = new Array(7);
   weekday[5] = "Friday";
   weekday[6] = "Saturday";
 
-var curDay = weekday[days];
-var curHour = hours;
-var curMinute = minutes;
-var curSeconds = seconds;
-
 var updateDisplay = function(days, hours, minutes, seconds) {
   if (displayReady) {
+    var curDay = weekday[days];
+    var curHour = hours;
+    var curMinute = minutes;
+    var curSeconds = seconds;
+
     dowdisplay.innerHTML = curDay;
     timerdisplay.innerHTML = curHour + ":" + curMinute;
-  }
+  };
 };
 
 var getDisplayElements = function() {
