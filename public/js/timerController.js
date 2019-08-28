@@ -2,13 +2,7 @@
 
 var dowdisplay;
 var timerdisplay;
-
 var statusEl;
-
-var curDay = '';
-var curHour = '';
-var curMinute = '';
-var curSeconds = '';
 
 var displayReady = false;
 
@@ -33,10 +27,15 @@ var weekday = new Array(7);
   weekday[5] = "Friday";
   weekday[6] = "Saturday";
 
+var curDay = weekday[days];
+var curHour = hours;
+var curMinute = minutes;
+var curSeconds = seconds;
+
 var updateDisplay = function(days, hours, minutes, seconds) {
   if (displayReady) {
-    dowdisplay.innerHTML = weekday[days];
-    timerdisplay.innerHTML = String(hours) + ":" + String(minutes);
+    dowdisplay.innerHTML = curDay;
+    timerdisplay.innerHTML = curHour + ":" + curMinute;
   }
 };
 
