@@ -3,22 +3,22 @@ $displacement: 5vw
 $path: cubic-bezier(0.175, 0.885, 0.32, 1.275)
 
 @keyframes enter
-  from 
+  from
     color: rgba(255, 255, 255, 0)
     transform: translateY(-$displacement)
-  to   
+  to
     color: rgba(255, 255, 255, 1)
     transform: translateY(0)
 
 @keyframes exit
-  from 
+  from
     color: rgba(255, 255, 255, 1)
     transform: translateY(0)
-  to   
+  to
     color: rgba(255, 255, 255, 0)
     transform: translateY($displacement)
-  
-#timer-display 
+
+#timer-display
   +flexbox
   +justify-content(center)
   width: 100%
@@ -26,7 +26,15 @@ $path: cubic-bezier(0.175, 0.885, 0.32, 1.275)
   font-weight: 400
   font-family: "Play", "sans-serif"
 
-.digit 
+#dow-display
+  +flexbox
+  +justify-content(center)
+  width: 100%
+  font-size: 20vw
+  font-weight: 400
+  font-family: "Play", "sans-serif"
+
+.digit
   width: 13vw
 
   .front
@@ -55,7 +63,7 @@ $path: cubic-bezier(0.175, 0.885, 0.32, 1.275)
     animation-timing-function: $path
 
 
-.separator 
+.separator
   text-align: center
   vertical-align: middle
   width: 8vw

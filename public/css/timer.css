@@ -88,6 +88,18 @@ button {
                                       font-family: "Play", sans-serif;
                                     }
 
+                                    #dow-display {
+                                      display: -webkit-flex;
+                                      display: -ms-flexbox;
+                                      display: flex;
+                                      -webkit-justify-content: center;
+                                      justify-content: center;
+                                      width: 100%;
+                                      font-size: 20vw;
+                                      font-weight: 400;
+                                      font-family: "Play", sans-serif;
+                                    }
+
                                     .digit {
                                       width: 13vw; }
                                       .digit .front {

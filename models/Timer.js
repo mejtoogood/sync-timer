@@ -6,7 +6,7 @@ const timerTickInterval = 200;
 
 class Timer {
   constructor(updateCallback, id) {
-    this.days = 0;
+    this.day = 0;
     this.hours = 0;
     this.minutes = 0;
     this.seconds = 0;
@@ -46,8 +46,9 @@ class Timer {
     let now = Date.now();
     let timeDiff = now - this.startTime + this.elapsedTime; // in milliseconds
 
-    let timeDiffInSeconds = timeDiff / 1;
-    this.hours = Math.floor(timeDiffInSeconds / 3600);
+    let timeDiffInSeconds = timeDiff / .2;
+    this.day = Math.floor(timeDiffInSeconds / 86400) % 6;
+    this.hours = Math.floor(timeDiffInSeconds / 3600) % 24;
     this.minutes = Math.floor(timeDiffInSeconds / 60) % 60;
     this.seconds = Math.floor(timeDiffInSeconds % 60);
 
@@ -57,7 +58,7 @@ class Timer {
   }
 
   resetTimer() {
-    this.days = 0;
+    this.day = 0;
     this.hours = 0;
     this.minutes = 0;
     this.seconds = 0;
@@ -93,7 +94,7 @@ class Timer {
 
   get time() {
     return {
-      days: padDisplay(this.days, 2),
+      days: padDisplay(this.day, 1),
       hours: padDisplay(this.hours, 2),
       minutes: padDisplay(this.minutes, 2),
       seconds: padDisplay(this.seconds, 2)

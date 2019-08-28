@@ -1,6 +1,5 @@
 'use strict';
 
-var dayString;
 var hoursTensFront;
 var hoursOnesFront;
 var minutesTensFront;
@@ -35,8 +34,22 @@ var resetTimer = function() {
   sendResetSignal();
 }
 
-var updateDisplay = function(hours, minutes, seconds) {
+function DoW(day) {
+  var weekday = new Array(7);
+  weekday[0] = "Sunday";
+  weekday[1] = "Monday";
+  weekday[2] = "Tuesday";
+  weekday[3] = "Wednesday";
+  weekday[4] = "Thursday";
+  weekday[5] = "Friday";
+  weekday[6] = "Saturday";
+
+  return weekday[day];
+}
+
+var updateDisplay = function(day, hours, minutes, seconds) {
   if (displayReady) {
+    dowdisplay.innerText = DoW(day);
     if (curHour !== hours) {
       if (curHour.charAt(0) !== hours.charAt(0)) {
         hoursTensBack.innerText = curHour.charAt(0);
