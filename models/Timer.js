@@ -2,7 +2,7 @@
 
 const { padDisplay } = require('../helpers');
 const TIMERSTATE = require('../helpers/timerStates');
-const timerTickInterval = 250;
+const timerTickInterval = 100;
 
 class Timer {
   constructor(updateCallback, id) {
@@ -50,6 +50,7 @@ class Timer {
     this.days = Math.floor(timeDiffInSeconds / 86400) % 6;
     this.hours = Math.floor(timeDiffInSeconds / 3600) % 24;
     this.minutes = Math.floor(timeDiffInSeconds / 60) % 60;
+    this.seconds = Math.floor(timeDiffInSeconds);
 
     if (this.updateCallback) {
       this.updateCallback(this);
@@ -94,10 +95,11 @@ class Timer {
   get time() {
     return {
       days: this.days,
-      hours: this.hours,
-      minutes: this.minutes
+      hours: padDisplay(this.hours, 2),
+      minutes: padDisplay(this.minutes, 2),
+      seconds: padDisplay(this.seconds, 2)
     };
-  }
+  };
 }
 
 module.exports = Timer;
