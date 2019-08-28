@@ -8,7 +8,6 @@ var statusEl;
 var curDay = '0';
 var curHour = '0';
 var curMinute = '0';
-var curSecond = '0';
 
 var displayReady = false;
 
@@ -33,12 +32,11 @@ var weekday = new Array(7);
   weekday[5] = "Friday";
   weekday[6] = "Saturday";
 
-var updateDisplay = function(days, hours, minutes, seconds) {
+var updateDisplay = function(days, hours, minutes) {
   if (displayReady) {
     curDay = weekday[days];
     curHour = hours;
     curMinute = minutes;
-    curSecond = seconds;
 
     dowdisplay.innerHTML = curDay;
     timerdisplay.innerHTML = curHour + ":" + curMinute;

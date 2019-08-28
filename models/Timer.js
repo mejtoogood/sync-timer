@@ -94,9 +94,9 @@ class Timer {
 
   get time() {
     return {
-      days: padDisplay(this.days, 1),
-      hours: padDisplay(this.hours, 2),
-      minutes: padDisplay(this.minutes, 2)
+      days: this.days,
+      hours: this.hours,
+      minutes: this.minutes
     };
   }
 }
