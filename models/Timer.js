@@ -13,7 +13,7 @@ class Timer {
     this.timerRunning = TIMERSTATE.STOPPED;
     this.timerLoop = undefined;
     this.startTime = 0;
-    this.elapsedTime = 0;
+    this.elapsedTime = 15000;
     this.clients = [];
     this.updateCallback = updateCallback;
     this.id = id;
@@ -95,11 +95,11 @@ class Timer {
   get time() {
     return {
       days: this.days,
-      hours: padDisplay(this.hours, 2),
-      minutes: padDisplay(this.minutes, 2),
-      seconds: padDisplay(this.seconds, 2)
-    };
-  };
+      hours: padDisplay(this.hours % 24, 2),
+      minutes: padDisplay(this.minutes % 60, 2),
+      seconds: padDisplay(this.seconds % 60, 2)
+    }
+  }
 };
 
 module.exports = Timer;
