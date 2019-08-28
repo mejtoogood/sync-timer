@@ -1,9 +1,9 @@
 html
   head
-    title Sync Timer
+    title Cuppa Timer
     include partials/head.pug
     link(rel="stylesheet", type="text/css", href="/css/timer.css")
-  
+
   body(onload="getDisplayElements()")
     div.timer-ui
 
@@ -15,18 +15,18 @@ html
             <!-- div.id-tip Share this ID to invite others to watch this timer. -->
           i#running-state.fas.fa-spinner.fa-spin
 
-      div#timer-display 
+      div#timer-display
         div#hours-tens.digit
           div.front 0
           div.back 0
-        div#hours-ones.digit 
+        div#hours-ones.digit
           div.front 0
           div.back 0
         div.separator :
-        div#minutes-tens.digit 
+        div#minutes-tens.digit
           div.front 0
           div.back 0
-        div#minutes-ones.digit 
+        div#minutes-ones.digit
           div.front 0
           div.back 0
         div.separator :
@@ -44,7 +44,7 @@ html
           i.fas.fa-pause
         button#stop-button.control-button(onclick="resetTimer()")
           i.fas.fa-fast-backward
-    
+
   script(type="text/javascript", src="/socket.io/socket.io.js")
   script.
     myTimerId="#{timerId}"
