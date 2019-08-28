@@ -7,8 +7,8 @@ const timerTickInterval = 200;
 class Timer {
   constructor(updateCallback, id) {
     this.days = 0;
-    this.hours = 0;
-    this.minutes = 0;
+    this.hours = 23;
+    this.minutes = 55;
     this.seconds = 0;
     this.timerRunning = TIMERSTATE.STOPPED;
     this.timerLoop = undefined;
