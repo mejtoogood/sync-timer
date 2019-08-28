@@ -46,9 +46,9 @@ class Timer {
     let timeDiff = now - this.startTime + this.elapsedTime; // in milliseconds
 
     let timeDiffInSeconds = timeDiff / 1000;
-    this.days = Math.floor(timeDiffInSeconds / 86400);
-    this.hours = Math.floor(timeDiffInSeconds / 3600);
-    this.minutes = Math.floor(timeDiffInSeconds / 60);
+    this.days = Math.floor(timeDiffInSeconds / 86400) % 6;
+    this.hours = Math.floor(timeDiffInSeconds / 3600) % 24;
+    this.minutes = Math.floor(timeDiffInSeconds / 60) % 60;
 
     if (this.updateCallback) {
       this.updateCallback(this);
@@ -91,9 +91,9 @@ class Timer {
 
   get time() {
     return {
-      days: this.days % 6,
-      hours: padDisplay(this.hours % 24, 2),
-      minutes: padDisplay(this.minutes % 60, 2)
+      days: this.days,
+      hours: padDisplay(this.hours, 2),
+      minutes: padDisplay(this.minutes, 2)
     }
   }
 };

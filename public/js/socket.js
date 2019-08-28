@@ -14,9 +14,9 @@ socket.on('connect', function() {
 
   socket.on('update timer', function(time) {
     if (time !== null) {
-      updateDisplay(time.hours, time.minutes, time.seconds);
+      updateDisplay(time.days, time.hours, time.minutes);
     }
-  }); 
+  });
 
   socket.on('timer started', function() {
     statusEl.classList.remove('fa-pause');
@@ -24,7 +24,7 @@ socket.on('connect', function() {
     statusEl.classList.remove('fa-spin');
     statusEl.classList.remove('fa-exclamation-triangle');
     statusEl.classList.add('fa-play');
-  }); 
+  });
 
   socket.on('timer stopped', function() {
     statusEl.classList.remove('fa-play');
@@ -33,7 +33,7 @@ socket.on('connect', function() {
     statusEl.classList.remove('fa-exclamation-triangle');
     statusEl.classList.add('fa-pause');
   });
-  
+
   socket.on('timer error', function() {
     showError();
   });
