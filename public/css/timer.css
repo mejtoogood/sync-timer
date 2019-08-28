@@ -54,11 +54,11 @@ button {
     }
 
 #timerId {
-  font-family: "Source Code Pro", monospace;
+  font-family: "Source Code Pro", monospace !important;
 }
 
 #timer-id-field {
-  font-family: "Source Code Pro", monospace;
+  font-family: "Source Code Pro", monospace !important;
 }
 
     .id-tip {
