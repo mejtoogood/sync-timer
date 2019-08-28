@@ -30,7 +30,7 @@ class Timer {
       this.timerRunning = TIMERSTATE.RUNNING;
     }
   }
-  
+
   stopTimer() {
     if (this.timerRunning === TIMERSTATE.RUNNING) {
       this.elapsedTime += Date.now() - this.startTime;
@@ -45,8 +45,8 @@ class Timer {
   updateTimer() {
     let now = Date.now();
     let timeDiff = now - this.startTime + this.elapsedTime; // in milliseconds
-  
-    let timeDiffInSeconds = timeDiff / 1000;
+
+    let timeDiffInSeconds = timeDiff / 100;
     this.hours = Math.floor(timeDiffInSeconds / 3600);
     this.minutes = Math.floor(timeDiffInSeconds / 60) % 60;
     this.seconds = Math.floor(timeDiffInSeconds % 60);
@@ -88,7 +88,7 @@ class Timer {
       return true;
     }
 
-    return false;    
+    return false;
   }
 
   get time() {
