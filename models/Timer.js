@@ -2,7 +2,7 @@
 
 const { padDisplay } = require('../helpers');
 const TIMERSTATE = require('../helpers/timerStates');
-const timerTickInterval = 5;
+const timerTickInterval = 250;
 
 class Timer {
   constructor(updateCallback, id) {
@@ -46,11 +46,10 @@ class Timer {
     let now = Date.now();
     let timeDiff = now - this.startTime + this.elapsedTime; // in milliseconds
 
-    let timeDiffInSeconds = timeDiff / 20;
-    this.days = Math.floor(timeDiffInSeconds / 86400) % 6;
-    this.hours = Math.floor(timeDiffInSeconds / 3600) % 24;
-    this.minutes = Math.floor(timeDiffInSeconds / 60) % 60;
-    this.seconds = Math.floor(timeDiffInSeconds % 60);
+    let timeDiffInSeconds = timeDiff / 1000;
+    this.days = Math.floor(timeDiffInSeconds / (86400 / 48)) % 6;
+    this.hours = Math.floor(timeDiffInSeconds / (3600 / 48)) % 24;
+    this.minutes = Math.floor(timeDiffInSeconds / (60 / 48)) % 60;
 
     if (this.updateCallback) {
       this.updateCallback(this);
