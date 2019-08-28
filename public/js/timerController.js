@@ -93,33 +93,7 @@ var updateDisplay = function(hours, minutes, seconds) {
       curMinute = minutes;
     }
 
-    if (curSecond !== seconds) {
-      if (curSecond.charAt(0) !== seconds.charAt(0)) {
-        secondsTensBack.innerText = curSecond.charAt(0);
-        secondsTensFront.innerText = seconds.charAt(0);
-
-        secondsTensBack.classList.remove('animate-out');
-        secondsTensFront.classList.remove('animate-in');
-        void secondsTensBack.offsetWidth;
-        void secondsTensFront.offsetWidth;
-        secondsTensBack.classList.add('animate-out');
-        secondsTensFront.classList.add('animate-in');
-      }
-
-      if (curSecond.charAt(1) !== seconds.charAt(1)) {
-        secondsOnesBack.innerText = curSecond.charAt(1);
-        secondsOnesFront.innerText = seconds.charAt(1);
-
-        secondsOnesBack.classList.remove('animate-out');
-        secondsOnesFront.classList.remove('animate-in');
-        void secondsOnesBack.offsetWidth;
-        void secondsOnesFront.offsetWidth;
-        secondsOnesBack.classList.add('animate-out');
-        secondsOnesFront.classList.add('animate-in');
-      }
-
-      curSecond = seconds;
-    }
+    curSecond = seconds;
   }
 };
 
