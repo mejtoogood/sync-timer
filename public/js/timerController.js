@@ -1,5 +1,6 @@
 'use strict';
 
+var dayString;
 var hoursTensFront;
 var hoursOnesFront;
 var minutesTensFront;
@@ -15,6 +16,7 @@ var secondsOnesBack;
 
 var statusEl;
 
+var curDay = '';
 var curHour = '';
 var curMinute = '';
 var curSecond = '';
