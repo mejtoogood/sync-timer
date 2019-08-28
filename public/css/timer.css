@@ -1,8 +1,9 @@
 body {
-  background-image: url("../img/background2.jpg");
-  background-size: cover;
-  background-position: left bottom;
-  color: white;
+  //background-image: url("../img/background2.jpg");
+  //background-size: cover;
+  //background-position: left bottom;
+  color: red;
+  background-color: red;
   font-family: 'Play', sans-serif; }
 
 button {
@@ -63,12 +64,12 @@ button {
     color: rgba(255, 255, 255, 0);
     transform: translateY(-5vw); }
   to {
-    color: white;
+    color: red;
     transform: translateY(0); } }
 
 @keyframes exit {
   from {
-    color: white;
+    color: red;
     transform: translateY(0); }
   to {
     color: rgba(255, 255, 255, 0);
