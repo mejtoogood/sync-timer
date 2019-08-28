@@ -12,8 +12,8 @@ class Timer {
     this.seconds = 0;
     this.timerRunning = TIMERSTATE.STOPPED;
     this.timerLoop = undefined;
-    this.startTime = (23 * 1000 * 60 * 60) + (55 * 1000 * 60);
-    this.elapsedTime = 0;
+    this.startTime = 0;
+    this.elapsedTime = (23 * 1000 * 60 * 60) + (55 * 1000 * 60);
     this.clients = [];
     this.updateCallback = updateCallback;
     this.id = id;
