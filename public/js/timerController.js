@@ -1,5 +1,6 @@
 'use strict';
 
+var dayString;
 var hoursTensFront;
 var hoursOnesFront;
 var minutesTensFront;
@@ -15,6 +16,7 @@ var secondsOnesBack;
 
 var statusEl;
 
+var curDay = '';
 var curHour = '';
 var curMinute = '';
 var curSecond = '';
@@ -33,7 +35,7 @@ var resetTimer = function() {
   sendResetSignal();
 }
 
-var updateDisplay = function(hours, minutes, seconds) {
+var updateDisplay = function(day, hours, minutes, seconds) {
   if (displayReady) {
     if (curHour !== hours) {
       if (curHour.charAt(0) !== hours.charAt(0)) {
